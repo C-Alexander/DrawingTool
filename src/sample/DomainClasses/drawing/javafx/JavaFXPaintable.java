@@ -51,7 +51,7 @@ public class JavaFXPaintable implements Paintable {
         if (text.getFontName() != null) {
             graphics.setFont(Font.font(text.getFontName()));
         }
-        graphics.strokeText(text.getContent(), text.getAnchor().getX(), text.getAnchor().getY());
+        graphics.fillText(text.getContent(), text.getAnchor().getX(), text.getAnchor().getY());
     }
 
     @Override
@@ -63,11 +63,15 @@ public class JavaFXPaintable implements Paintable {
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
-        javafx.scene.image.Image img = new javafx.scene.image.Image(fileStream);
-        graphics.drawImage(img, image.getAnchor().getX(), image.getAnchor().getY(), image.getWidth(), image.getHeight());
+        javafx.scene.image.Image img = null;
+        if (fileStream != null) {
+            img = new javafx.scene.image.Image(fileStream);
+            graphics.drawImage(img, image.getAnchor().getX(), image.getAnchor().getY(), image.getWidth(), image.getHeight());
+
+        }
     }
 
-    public void setColor(DrawingItem item) {
+    private void setColor(DrawingItem item) {
         Color color;
         switch (item.getColor()) {
             case BLACK:
