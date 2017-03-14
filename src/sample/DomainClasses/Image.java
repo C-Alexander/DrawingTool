@@ -7,7 +7,7 @@ import java.io.File;
  */
 @SuppressWarnings({"DefaultFileTemplate", "unused"})
 public class Image extends DrawingItem {
-    private File file;
+    private String filepath;
     private Point anchor;
     private double width;
     private double height;
@@ -27,7 +27,7 @@ public class Image extends DrawingItem {
     public String toString() {
         return super.toString() +
                 "Image{" +
-                "file=" + file +
+                "file=" + filepath +
                 ", anchor=" + anchor +
                 ", width=" + width +
                 ", height=" + height +
@@ -78,12 +78,12 @@ public class Image extends DrawingItem {
 
     @SuppressWarnings("WeakerAccess")
     public File getFile() {
-        return file;
+        return new File(filepath);
     }
 
     @SuppressWarnings("WeakerAccess")
     public void setFile(File file) {
-        this.file = file;
+        this.filepath = file.getAbsolutePath();
     }
 
     @Override

@@ -1,8 +1,6 @@
 package sample.DomainClasses.drawing.javafx;
 
 import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.image.*;
-import javafx.scene.paint.*;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import sample.DomainClasses.*;
@@ -11,11 +9,6 @@ import sample.DomainClasses.Image;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
-import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 /**
  * Created by jasve_29 on 07-Mar-17.

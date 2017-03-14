@@ -1,8 +1,6 @@
 package sample.DomainClasses;
 
 
-import sample.DomainClasses.drawing.javafx.JavaFXPaintable;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -13,7 +11,7 @@ import java.util.List;
 @SuppressWarnings({"DefaultFileTemplate", "unused"})
 public class Drawing {
     private String name;
-    private final List<DrawingItem> items = new ArrayList<>();
+    private List<DrawingItem> items = new ArrayList<>();
     @SuppressWarnings("unused")
     public String getName() {
         return name;
@@ -38,6 +36,10 @@ public class Drawing {
     }
     public List<DrawingItem> getItems() {
         return Collections.unmodifiableList(items);
+    }
+
+    public void setList(List<DrawingItem> list) {
+        this.items = list;
     }
     public void clearAll() {
         items.clear();

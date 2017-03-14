@@ -7,13 +7,16 @@ import java.util.Random;
  */
 @SuppressWarnings("DefaultFileTemplate")
 public class Point {
-    private final double x;
-    private final double y;
+    public double x;
+    public double y;
 
     @SuppressWarnings("WeakerAccess")
     public Point(double x, double y) {
         this.x = x;
         this.y = y;
+    }
+
+    public Point() {
     }
 
     public double getX() {
